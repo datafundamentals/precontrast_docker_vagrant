@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
     v.name = "rm-pc-coreos"
     v.customize [
         "modifyvm", :id,
-        "--name", "coreos-contrast",
+        "--name", "rm-pc-coreos",
         "--memory", 2048,
         "--natdnshostresolver1", "on",
         "--cpus", 2,
