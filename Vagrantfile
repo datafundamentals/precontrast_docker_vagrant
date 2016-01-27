@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "#{ENV['HOME']}/rm_pc/work", "/home/core/work", id: "core", :nfs => true, :mount_options => ['nolock,vers=3,udp'] 
 
   config.vm.provider :virtualbox do |v|
-    v.name = "coreos-vm"
+    v.name = "rm-pc-coreos"
     v.customize [
         "modifyvm", :id,
         "--name", "coreos-contrast",
