@@ -8,9 +8,9 @@ Vagrant.configure("2") do |config|
    config.vm.network "forwarded_port", guest: port, host: port
   end
 
-  config.vm.network "private_network", ip: "192.168.33.13"
+  config.vm.network "private_network", ip: "#{ENV['RM_PC_VAGRANT_IP']}"
 
-  config.vm.synced_folder "#{ENV['HOME']}/work/contrast/work", "/home/core/work", id: "core", :nfs => true, :mount_options => ['nolock,vers=3,udp'] 
+  config.vm.synced_folder "#{ENV['HOME']}/rm_pc/work", "/home/core/work", id: "core", :nfs => true, :mount_options => ['nolock,vers=3,udp'] 
 
   config.vm.provider :virtualbox do |v|
     v.name = "coreos-vm"
