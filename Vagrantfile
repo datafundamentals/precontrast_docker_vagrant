@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "private_network", ip: "#{ENV['RM_PC_VAGRANT_IP']}"
 
+  config.vm.synced_folder "./vagrantroot", "/home/core", nil
   config.vm.synced_folder "#{ENV['HOME']}/rm_pc/work", "/home/core/work", id: "core", :nfs => true, :mount_options => ['nolock,vers=3,udp'] 
 
   config.vm.provider :virtualbox do |v|
